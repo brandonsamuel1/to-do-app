@@ -3,25 +3,24 @@ exports.seed = function(knex, Promise) {
   // Deletes ALL existing entries
   return knex('todo').del()
     .then(function () {
-      // Inserts seed entries
-      const todos = [(
+      const todos = [{
         title: 'Build a CRUD app',
-        prioroty: 2,
+        priority: 2,
         date: new Date()
-      ), (
+      }, {
         title: 'Practice coding',
-        prioroty: 3,
+        priority: 3,
         date: new Date()
-      ), (
+      }, {
         title: 'Finish midterm project',
-        prioroty: 1,
+        priority: 1,
         date: new Date()
-      ), (
+      }, {
         title: 'Build more apps',
-        prioroty: 4,
+        priority: 4,
         date: new Date()
-      )];
+      }];
 
-      return.knex('todo').insert(todos);
+      return knex('todo').insert(todos);
     });
 };
